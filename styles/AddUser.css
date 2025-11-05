@@ -1,0 +1,160 @@
+/* ===== POPUP OVERLAY ===== */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: -10px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+}
+
+
+/* ===== POPUP CONTENT BOX ===== */
+.popup-content {
+  background: #fff;
+  padding: 25px 35px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== FORM STYLING ===== */
+.add_user_form {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.add_user_form label {
+  display: block;
+    font-weight: 500;
+  color: #333;
+}
+
+.add_user_form input {
+  display: block;
+  width: 100%;.pagination_controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 12px;
+}
+
+.pagination_btn {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination_btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.page_info {
+  font-weight: bold;
+}
+
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+/* ===== BUTTONS ===== */
+.popup-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.new_btn {
+  background: #099866;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.new_btn:hover {
+  background: #077a52;
+}
+
+.new_cls_btn {
+  background: #c82b2b;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+
+}
+
+.new_cls_btn:hover {
+  background: #a02020;
+}
+.label_error_group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.label_error_group label {
+  font-weight: 500;
+  color: #333;
+}
+
+.label_error_group .error {
+  color: #e63946;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: right;
+}
+.pagination_controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  gap: 12px;
+}
+
+.pagination_btn {
+  padding: 6px 12px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination_btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.page_info {
+  font-weight: bold;
+}

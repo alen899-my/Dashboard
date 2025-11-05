@@ -1,0 +1,81 @@
+
+
+.usercard_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.usercard_container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.usercard_container h2 {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.close_btn {
+  margin-top: 1rem;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 230px;
+  transform: translateY(-20px);
+}
+
+.close_btn:hover {
+  background: #c53030;
+}
+.user_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user_form input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn_group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.save_btn {
+  background: #12a268;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save_btn:hover {
+  background: #12692b;
+}
+.close_btn2{
+    margin-top: 1rem;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 0px;
+  transform: translateY(-280px);
+}

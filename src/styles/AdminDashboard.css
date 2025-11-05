@@ -1,0 +1,12 @@
+.admin_dashboard {
+  display: flex;
+  height: 100vh;
+  background-color: #ece8e8;
+  padding: 0;
+
+}
+
+.dashboard_content {
+  flex: 1;
+  padding: 0px;
+}

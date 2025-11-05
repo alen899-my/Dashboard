@@ -1,0 +1,37 @@
+.theme-toggle-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.2s ease;
+}
+
+.theme-icon {
+  width: 30px;
+  height: 30px;
+  transition: filter 0.3s ease;
+}
+
+/* Light theme */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light .theme-icon {
+  filter: drop-shadow(0 0 4px #f1c40f);
+}
+
+/* Dark theme (white background) */
+body.dark {
+  background-color: #ffffff; /* White background for dark mode */
+  color: #000000;
+}
+
+/* Adjust icon look when in dark mode */
+body.dark .theme-icon {
+  filter: drop-shadow(0 0 4px #0d68c3);
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 4px;
+}

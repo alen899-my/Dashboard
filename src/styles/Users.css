@@ -1,0 +1,129 @@
+
+.users_section {
+  padding: 20px;
+}
+
+.users_section h1 {
+  text-align: center;
+  color: var(--text-color); 
+}
+
+.user_option_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid var(--text-color);
+}
+
+.all_user,
+.add_use,
+.update_user,
+.delete_user {
+  background-color: var(--text-color);
+  padding: 20px;
+  color: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.all_user:hover,
+.add_use:hover,
+.update_user:hover,
+.delete_user:hover {
+  opacity: 0.9;
+}
+
+
+.users_container {
+  padding: 20px;
+}
+
+.table_wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.users_table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-color); 
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.users_table th,
+.users_table td {
+  border: 1px solid #dcdada;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.users_table th {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  font-weight: 600;
+}
+
+.users_table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.users_table tr:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
+}
+
+
+.action_btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action_btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--bg-color);
+  background-color: var(--text-color);
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.action_btn img {
+  width: 25px;
+  height: 25px;
+}
+
+.action_btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+.loading_text {
+  text-align: center;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.btn-addds {
+  background: var(--text-color);
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--bg-color);
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-addds:hover {
+  opacity: 0.9;
+}
