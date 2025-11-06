@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/welcomeComponent.css";
 import { useNavigate } from "react-router-dom";
 import ThemeToggleButton from "./ThemeToggleButton";
+import TimeDate from "./TimeDate";
 const WelcomeComponent = () => {
   const user = JSON.parse(localStorage.getItem("user")) || { name: "Guest" };
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const WelcomeComponent = () => {
       <h1>
         Welcome <span>{user.name}</span>
       </h1>
-    
+      <TimeDate/>
       <div className="buttons">
         <button className="logout" onClick={handleLogout}>
           Logout

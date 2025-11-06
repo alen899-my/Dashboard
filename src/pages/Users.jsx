@@ -13,10 +13,7 @@ const Users = () => {
      <div className="users_section">
       <h1>Manage All The Users</h1>
     
-      <div className="user_options">
-        {/* Pass the function to the component that adds the user */}
-        <UserOptions onUserAdded={handleUserAdded} />
-      </div>
+    
 
       {/* Pass the key/signal to the table component */}
       <AllUserTable userAddedSignal={userAdded} /> 

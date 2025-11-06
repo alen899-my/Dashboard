@@ -1,0 +1,42 @@
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.alert-banner.success {
+  background-color: #a2f282; /* green */
+  color: #000;
+  border: 1px solid #4caf50;
+}
+
+.alert-banner.error {
+  background-color: #f28c82; /* red */
+  color: #000;
+  border: 1px solid #d32f2f;
+}
+
+.alert-banner.info {
+  background-color: #82baf2; /* blue */
+  color: #000;
+  border: 1px solid #1976d2;
+}
+
+.alert-banner .alert-link {
+  margin-left: 10px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.alert-banner .alert-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 10px;
+}

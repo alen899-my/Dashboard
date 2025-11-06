@@ -25,7 +25,11 @@ const schema = yup.object().shape({
     .required("Email is required"),
 
   phone: yup .string() .matches(/^[0-9]{10}$/, "Phone number must be 10 digits") .required("Phone number is required"),
-
+  Department: yup
+    .string()
+    .trim()
+    .min(3, "Department must be at least 3 characters long")
+    .required("Department is required"),
   password: yup
     .string()
     .min(8, "Password must be at least 8 characters")
@@ -99,6 +103,9 @@ const SignupPage = () => {
           <label>Phone:</label>
           <input type="text" {...register("phone")} placeholder="Enter your phone number" />
           {errors.phone && <p >{errors.phone.message}</p>}
+          <label>Department:</label>
+          <input type="text" {...register("Department")} placeholder="Enter your Department " />
+          {errors.Department && <p >{errors.Department.message}</p>}
 
         
           <label>Password:</label>

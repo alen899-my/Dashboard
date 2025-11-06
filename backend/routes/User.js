@@ -3,13 +3,28 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
-router.get('/users', async (req, res) => {
+router.get("/users", async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 3;
+  const search = req.query.search || "";
+  const department=req.query.department||"";
 
   try {
-    const totalUsers = await User.countDocuments();
-    const users = await User.find({}, 'name email phone')
+     const query = {
+      ...(search && {
+        $or: [
+          { name: { $regex: search, $options: "i" } },
+          { email: { $regex: search, $options: "i" } },
+          { phone: { $regex: search, $options: "i" } },
+        ],
+      }),
+      ...(department && { Department:department }),
+    };
+    // Count total filtered users
+    const totalUsers = await User.countDocuments(query);
+
+    // Get only filtered + paginated users
+    const users = await User.find(query, "name email phone Department")
       .skip((page - 1) * limit)
       .limit(limit);
 
@@ -24,6 +39,7 @@ router.get('/users', async (req, res) => {
     res.status(500).json({ message: "Failed to fetch users" });
   }
 });
+
 
 //view a specific user
 router.get("/users/:id", async (req, res) => {
@@ -40,10 +56,10 @@ router.get("/users/:id", async (req, res) => {
 
 router.put("/users/:id", async (req, res) => {
   try {
-    const { name, email, phone, role } = req.body;
+    const { name, email, phone,Department, role } = req.body;
     const updatedUser = await User.findByIdAndUpdate(
       req.params.id,
-      { name, email, phone, role },
+      { name, email, phone,Department, role },
       { new: true }
     );
     if (!updatedUser)

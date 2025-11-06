@@ -18,7 +18,13 @@
   font-weight: lighter;
   margin-bottom: 5px;
 }
-
+.add_user_form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
 
 /* ===== POPUP CONTENT BOX ===== */
 .popup-content {
@@ -49,6 +55,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  
   gap: 12px;
 }
 

@@ -2,8 +2,9 @@ const mongoose=require("mongoose")
 const user=new mongoose.Schema({
     name:{type:String},
     email:{type:String,unique:true},
-    phone:{type:Number},
-    password:{type:String}
+    phone:{type:String},
+    password:{type:String},
+    Department:{type:String},
 
 
 

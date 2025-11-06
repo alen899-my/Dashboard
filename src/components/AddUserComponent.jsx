@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../../styles/AddUser.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
+import BannerSucces from "./BannerSucces";
 
 const schema = yup.object().shape({
   name: yup
@@ -19,6 +19,10 @@ const schema = yup.object().shape({
     .string()
     .matches(/^[0-9]{10}$/, "Phone number must be 10 digits")
     .required("Phone number is required"),
+  Department: yup
+    .string()
+    .min(3, "At least 3 characters needed")
+    .required("Name is required"),
   password: yup
     .string()
     .min(6, "Password must be at least 6 characters")
@@ -30,6 +34,7 @@ const schema = yup.object().shape({
 });
 
 const AddUserComponent = ({ onClose, onUserAdded }) => {
+  const [banner,setBanner]=useState(null)
   const {
     register,
     handleSubmit,
@@ -40,24 +45,48 @@ const AddUserComponent = ({ onClose, onUserAdded }) => {
   });
 
   const onSubmit = async (data) => {
-    try {
-      const res = await axios.post("http://localhost:5000/api/auth/signup", data);
-      alert(res.data.message || "User added successfully!");
+  try {
+    const res = await axios.post("http://localhost:5000/api/auth/signup", data);
 
-      if (onUserAdded) onUserAdded(res.data.newUser || res.data);
+    // ✅ Show success banner
+    setBanner({
+      type: "success",
+      message: res.data.message || "User added successfully!",
+    });
 
-      reset();
-      onClose();
-    } catch (err) {
-      console.error("Add user error:", err);
-      alert(err.response?.data?.message || "Failed to add user.");
-    }
-  };
+    // ✅ Reset form
+    reset();
+
+    if (onUserAdded) onUserAdded(res.data.newUser || res.data);
+
+    // ✅ Auto-hide after 3 seconds
+    setTimeout(() => {
+      setBanner(null);
+      onClose(); // close popup after banner
+    }, 3000);
+  } catch (err) {
+    console.error("Add user error:", err);
+
+    // ✅ Show error banner
+    setBanner({
+      type: "error",
+      message: err.response?.data?.message || "Failed to add user.",
+    });
+  }
+};
+
 
   return (
     <div className="popup">
       <div className="popup-content">
         <h2>Add New User</h2>
+        {banner && (
+     <BannerSucces
+    type={banner.type}
+    message={banner.message}
+    onClose={() => setBanner(null)}
+  />
+    )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="add_user_form">
           <div className="label_error_group">
@@ -78,6 +107,26 @@ const AddUserComponent = ({ onClose, onUserAdded }) => {
           </div>
           <input type="number" placeholder="Phone" {...register("phone")} />
   {errors.phone && <p className="error">{errors.phone.message}</p>}
+
+
+  <div className="label_error_group">
+  <label>Department:</label>
+</div>
+
+<select {...register("Department")} defaultValue="">
+  <option value="" disabled>
+    Select Department
+  </option>
+  <option value="HR">HR</option>
+  <option value="IT">IT</option>
+  <option value="Finance">Finance</option>
+  <option value="Marketing">Marketing</option>
+  <option value="Sales">Sales</option>
+  <option value="Support">Support</option>
+</select>
+
+{errors.Department && <p className="error">{errors.Department.message}</p>}
+
           <div className="label_error_group">
             <label>Password:</label>
          

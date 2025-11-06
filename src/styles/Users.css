@@ -117,7 +117,8 @@
 
 .btn-addds {
   background: var(--text-color);
-  padding: 10px 12px;
+  padding: 10px 20px;
+  margin-bottom: 40px;
   border-radius: 10px;
   color: var(--bg-color);
   border: none;
@@ -126,4 +127,55 @@
 
 .btn-addds:hover {
   opacity: 0.9;
+}
+/* Users.css */
+.search_input {
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 250px;
+  margin-top: 10px;
+}
+.user_option_container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  
+}
+.search_box {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 2px;
+  align-items: center;
+}
+
+.btn-search {
+  padding: 8px 14px;
+  margin-top: 9px;
+  background-color: #3c3f42;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: #141516;
+}
+.page_info {
+  color: rgb(138, 136, 136);
+  font-weight: 100;
+  
+}
+.dropdown_box {
+  margin-left: 10px;
+}
+
+.dropdown_select {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
 }

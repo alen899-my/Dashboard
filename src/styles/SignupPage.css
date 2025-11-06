@@ -72,6 +72,7 @@
 }
 .success-actions a {
   text-decoration: none;
+  margin-right: 0px;
   color: rgb(85, 82, 82); /* optional — makes it use the parent text color */
   font-weight: 600; /* optional — makes it stand out a bit */
 }
@@ -112,7 +113,7 @@
   text-decoration: none;
   color: #155724;
   font-weight: 600;
-  margin-right: 40px;
+  margin-right: 4 0px;
   padding: 6px 12px;
   border-radius: 4px;
   transition: all 0.2s ease;
