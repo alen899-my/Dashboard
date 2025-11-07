@@ -39,9 +39,7 @@ const UserOptions = ({
           onChange={(e) => setSearchQuery(e.target.value)}
           className="search_input"
         />
-        <button className="btn-search" onClick={() => onSearch(searchQuery)}>
-          Search
-        </button>
+        
       </div>
 
        <div className="dropdown_box">
@@ -58,6 +56,9 @@ const UserOptions = ({
 <option value="IT">IT</option>
 
         </select>
+        <button className="btn-search" onClick={() => onSearch(searchQuery)}>
+          Filter
+        </button>
       </div>
       
     </div>

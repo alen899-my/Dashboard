@@ -2,7 +2,11 @@
 .users_section {
   padding: 20px;
 }
-
+.filtergroup{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .users_section h1 {
   text-align: center;
   color: var(--text-color); 
@@ -135,7 +139,7 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 250px;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 .user_option_container {
   display: flex;
@@ -145,19 +149,24 @@
 }
 .search_box {
   display: flex;
-  gap: 7px;
-  margin-bottom: 2px;
+  gap: px;
+  padding: -4px 10px;
+  margin-bottom: px;
+
+  
   align-items: center;
 }
 
 .btn-search {
-  padding: 8px 14px;
-  margin-top: 9px;
+  padding: 8px 20px;
+  margin-top: 8px;
   background-color: #3c3f42;
   color: white;
+  margin-left: 9px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+
 }
 
 .btn-search:hover {

@@ -8,7 +8,7 @@ const userroots=require("../backend/routes/User")
 const app=express()
 app.use(cors());
 app.use(express.json())
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "*" }));
 app.use('/api/auth',authroot)
 app.use('/api/admin', userroots);
 
