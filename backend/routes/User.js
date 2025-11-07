@@ -5,7 +5,7 @@ const User = require('../models/User');
 const auth=require("../middleware/auth")
 router.get("/users", async (req, res) => {
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 3;
+  const limit = parseInt(req.query.limit) || 10;
   const search = req.query.search || "";
   const department=req.query.department||"";
 
