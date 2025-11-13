@@ -5,7 +5,8 @@ const user=new mongoose.Schema({
     phone:{type:String},
     password:{type:String},
     Department:{type:String},
-
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
 
 
 },{timestamps:true})

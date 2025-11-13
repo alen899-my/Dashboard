@@ -6,11 +6,12 @@ const auth=require("../middleware/auth")
 router.get("/users", async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
-  const search = req.query.search || "";
-  const department=req.query.department||"";
+  const search = req.query.search?.toLowerCase() || "";
+  const department = req.query.department?.toLowerCase() || "";
 
   try {
-     const query = {
+    // ✅ Build dynamic query
+    const query = {
       ...(search && {
         $or: [
           { name: { $regex: search, $options: "i" } },
@@ -18,13 +19,17 @@ router.get("/users", async (req, res) => {
           { phone: { $regex: search, $options: "i" } },
         ],
       }),
-      ...(department && { Department:department }),
+      ...(department && {
+        Department: { $regex: `^${department}$`, $options: "i" }, // ✅ case-insensitive match
+      }),
     };
-    // Count total filtered users
+
+    // ✅ Count total filtered users
     const totalUsers = await User.countDocuments(query);
 
-    // Get only filtered + paginated users
-    const users = await User.find(query, "name email phone Department").sort({ _id: -1 })
+    // ✅ Get paginated users
+    const users = await User.find(query, "name email phone Department")
+      .sort({ _id: -1 })
       .skip((page - 1) * limit)
       .limit(limit);
 
@@ -39,6 +44,7 @@ router.get("/users", async (req, res) => {
     res.status(500).json({ message: "Failed to fetch users" });
   }
 });
+
 
 
 //view a specific user
